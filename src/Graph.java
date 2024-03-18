@@ -8,6 +8,8 @@ public class Graph {
     
     private File cities, roads;
     private Map<City,Set<Road>> cityMap = new HashMap<>();
+
+    private Map<Integer,City> mapIndexCity = new HashMap<>();
     private List<Road> roadList = new ArrayList<>();
     private Map<String, City> stringCityMap = new HashMap<>();
 
@@ -55,7 +57,7 @@ public class Graph {
                     }
                 }
                 cityMap.put(city,roadSet);
-
+                mapIndexCity.put(Integer.parseInt(lineSplit[0]),city);
                 stringCityMap.put(lineSplit[1],city);
             }
             scanner.close();

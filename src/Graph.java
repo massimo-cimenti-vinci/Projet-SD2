@@ -9,6 +9,7 @@ public class Graph {
     private File cities, roads;
     private Map<City,Set<Road>> cityMap = new HashMap<>();
     private List<Road> roadList = new ArrayList<>();
+    private Map<String, City> stringCityMap = new HashMap<>();
 
     public Graph(File cities, File roads){
         this.cities = cities;
@@ -54,6 +55,8 @@ public class Graph {
                     }
                 }
                 cityMap.put(city,roadSet);
+
+                stringCityMap.put(lineSplit[1],city);
             }
             scanner.close();
         }
@@ -69,9 +72,6 @@ public class Graph {
 
 
     public void calculerItineraireMinimisantNombreRoutes(String departureCity, String arrivalCity) {
-
-
-
 
     }
 
